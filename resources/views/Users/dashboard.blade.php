@@ -44,7 +44,7 @@
                             <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Account <i
                                     class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="my-profile.php">My
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/myprofile">My
                                         Profile</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="change-password.php">Change
                                         Password</a></li>
@@ -68,7 +68,7 @@
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="alert alert-info back-widget-set text-center">
                     <i class="fa fa-bars fa-5x"></i>
-                    <h3>{{ session('issuedbooksuser') }} </h3>
+                    <h3>{{ $issue }} </h3>
                     Book Issued
                 </div>
             </div>

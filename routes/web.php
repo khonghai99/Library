@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::post('/dashboard','LoginController@login');
 
+Route::get('/myprofile', 'UserController@myProfile');
+
 Route::get('/login', 'LoginController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');

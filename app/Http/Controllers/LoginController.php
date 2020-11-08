@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         return view('Users.login');
     }
@@ -16,14 +16,14 @@ class LoginController extends Controller
     {
         $userName = $request->emailid;
         $password = md5($request->password);
-        $dataCheck = DB::select("SELECT status from tblstudents where EmailId ='" . $userName . "' and Password ='" . $password . "'");
-        $data = DB::select("SELECT * FROM tblstudents where EmailId ='" . $userName . "' and Password ='" . $password . "'");
+        $dataCheck = DB::table('tblstudents')->where([['EmailId','=',$userName],['Password','=',$password]])->get('status');
+        $data = DB::table('tblstudents')->where([['EmailId','=',$userName],['Password','=',$password]])->get();
         if ($data != null) {
             $request->session()->put('stdid', $data[0]->StudentId);
             if ($dataCheck[0]->status == 1) {
-                $this->getIssuedBooksUser($request);
+                $issue = $this->getIssuedBooksUser($request);
                 $this->getReturnedBooksUser($request);
-                return view('Users.dashboard');
+                return view('Users.dashboard',compact('issue'));
 
             } elseif ($dataCheck[0]->status == 0) {
                 $this->getReturnedBooks($request);
@@ -46,7 +46,7 @@ class LoginController extends Controller
         $sid = $request->session()->get('stdid');
         $data = DB::select("SELECT id from tblissuedbookdetails where StudentID='" . $sid . "'");
         $issuedBooks = count($data);
-        $request->session()->put('issuedbooksuser', $issuedBooks);
+        return $issuedBooks;
     }
 
     public function getReturnedBooksUser(Request $request)
