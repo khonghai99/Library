@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="651191ab-b7fe-4445-b254-587bcb8171fd" name="Default Changelist" comment="">
+    <list default="true" id="651191ab-b7fe-4445-b254-587bcb8171fd" name="Default Changelist" comment="1">
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Admin/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Users/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/Users/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/add-author.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/add-author.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/add-book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/add-book.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/add-category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/add-category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/change-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/change-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/edit-author.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/edit-author.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/edit-book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/edit-book.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/edit-category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/edit-category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/issue-book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/issue-book.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/manage-authors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/manage-authors.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/manage-books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/manage-books.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/manage-categories.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/manage-categories.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/manage-issued-books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/manage-issued-books.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/reg-students.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/reg-students.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/update-issue-bookdeails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/update-issue-bookdeails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Users/change-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Users/change-password.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Users/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Users/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Users/issued-books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Users/issued-books.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Users/my-profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Users/my-profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Users/signup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Users/signup.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Users/user-forgot-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Users/user-forgot-password.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,17 +142,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xamppMySQL\htdocs\Library\resources\views\Users" />
-      <recent name="C:\xamppMySQL\htdocs\Library\resources\views\Admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xamppMySQL\htdocs\Library\resources\views\Users" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xamppMySQL\htdocs\Library\resources\views\Admin" />
       <recent name="C:\xamppMySQL\htdocs\Library\resources\views\Users" />
     </key>
   </component>
@@ -184,7 +173,7 @@
       <workItem from="1604333162426" duration="8750000" />
       <workItem from="1604372145297" duration="26646000" />
       <workItem from="1604660977504" duration="1656000" />
-      <workItem from="1604843531216" duration="596000" />
+      <workItem from="1604843531216" duration="8417000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1604470248571</created>
@@ -215,18 +204,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="71" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1604454792954" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1604470247648">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604847491947">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604470247648" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1604376153999">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1604847491947" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1604851480986">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604376153999" />
-    <state x="561" y="262" key="Github.ShareDialog" timestamp="1604470173475">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1604851480986" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1604848195876">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="561" y="262" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1604470173475" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604848195876" />
+    <state x="561" y="262" key="Github.ShareDialog" timestamp="1604844989001">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="561" y="262" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1604844989001" />
     <state x="455" y="69" key="Github.UntrackedFilesDialog" timestamp="1604470183131">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -239,13 +232,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="404" y="105" width="540" height="524" key="StructurePopup/0.0.1366.728@0.0.1366.728" timestamp="1604454940573" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1604470263707">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1604845016690">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604470263707" />
-    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1604453520424">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604845016690" />
+    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1604849969272">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1604453520424" />
+    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1604849969272" />
   </component>
 </project>

@@ -31,9 +31,18 @@
     </style>
 </head>
 <script type="text/javascript">
+    function valid() {
+        if (document.chngpwd.newpassword.value != document.chngpwd.confirmpassword.value) {
+            alert("New Password and Confirm Password Field do not match  !!");
+            document.chngpwd.confirmpassword.focus();
+            return false;
+        }
+        return true;
+    }
 </script>
 
 <body>
+@include('Users.header')
 <div class="content-wrapper">
     <div class="container">
         <div class="row pad-botm">
@@ -41,50 +50,50 @@
                 <h4 class="header-line">User Change Password</h4>
             </div>
         </div>
-        <div class="errorWrap"><strong>ERROR</strong>:
-            <div class="succWrap"><strong>SUCCESS</strong>:
-                <!--LOGIN PANEL START-->
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                Change Password
+{{--        @if($error)--}}
+{{--            <div class="errorWrap"><strong>ERROR</strong>:{{$error}}--}}
+{{--            </div>{{$msg}}--}}
+{{--        @else--}}
+{{--            <div class="succWrap"><strong>SUCCESS</strong>:{{$msg}} </div>--}}
+{{--    @endif--}}
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Change Password
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" onSubmit="return valid();" name="chngpwd">
+
+                            <div class="form-group">
+                                <label>Current Password</label>
+                                <input class="form-control" type="password" name="password" autocomplete="off"
+                                       required/>
                             </div>
-                            <div class="panel-body">
-                                <form role="form" method="post" onSubmit="return valid();" name="chngpwd">
 
-                                    <div class="form-group">
-                                        <label>Current Password</label>
-                                        <input class="form-control" type="password" name="password" autocomplete="off"
-                                               required/>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Enter Password</label>
-                                        <input class="form-control" type="password" name="newpassword"
-                                               autocomplete="off"
-                                               required/>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Confirm Password </label>
-                                        <input class="form-control" type="password" name="confirmpassword"
-                                               autocomplete="off"
-                                               required/>
-                                    </div>
-
-                                    <button type="submit" name="change" class="btn btn-info">Chnage</button>
-                                </form>
+                            <div class="form-group">
+                                <label>Enter Password</label>
+                                <input class="form-control" type="password" name="newpassword" autocomplete="off"
+                                       required/>
                             </div>
-                        </div>
+
+                            <div class="form-group">
+                                <label>Confirm Password </label>
+                                <input class="form-control" type="password" name="confirmpassword"
+                                       autocomplete="off" required/>
+                            </div>
+
+                            <button type="submit" name="change" class="btn btn-info">Change</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="{{ asset('assets/js/custom.js') }}" defer></script>
-        <script src="{{ asset('assets/js/jquery-1.10.2.js') }}" defer></script>
-        <script src="{{ asset('assets/js/bootstrap.js') }}" defer></script>
     </div>
 </div>
+@include('Users.footer')
+<script src="{{ asset('assets/js/custom.js') }}" defer></script>
+<script src="{{ asset('assets/js/jquery-1.10.2.js') }}" defer></script>
+<script src="{{ asset('assets/js/bootstrap.js') }}" defer></script>
 </body>
 </html>

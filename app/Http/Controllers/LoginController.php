@@ -16,23 +16,24 @@ class LoginController extends Controller
     {
         $userName = $request->emailid;
         $password = md5($request->password);
-        $dataCheck = DB::table('tblstudents')->where([['EmailId','=',$userName],['Password','=',$password]])->get('status');
-        $data = DB::table('tblstudents')->where([['EmailId','=',$userName],['Password','=',$password]])->get();
+        $dataCheck = DB::table('tblstudents')->where([['EmailId', '=', $userName], ['Password', '=', $password]])->get('status');
+        $data = DB::table('tblstudents')->where([['EmailId', '=', $userName], ['Password', '=', $password]])->get();
         if ($data != null) {
             $request->session()->put('stdid', $data[0]->StudentId);
             if ($dataCheck[0]->status == 1) {
-                $issue = $this->getIssuedBooksUser($request);
-                $this->getReturnedBooksUser($request);
-                return view('Users.dashboard',compact('issue'));
+                $request->session()->put('login', 1);
+                $issueBooksUser = $this->getIssuedBooksUser($request);
+                $returnedBooksUser = $this->getReturnedBooksUser($request);
+                return view('Users.dashboard', compact('issueBooksUser', 'returnedBooksUser'));
 
             } elseif ($dataCheck[0]->status == 0) {
-                $this->getReturnedBooks($request);
-                $this->getIssuedBooks($request);
-                $this->getAllBooks($request);
-                $this->getAuthorBooks($request);
-                $this->getCategory($request);
-                $this->getStudent($request);
-                return view('Admin.dashboard');
+                $returnedBooks = $this->getReturnedBooks($request);
+                $issuedBooks = $this->getIssuedBooks($request);
+                $allBooks = $this->getAllBooks($request);
+                $authorBooks = $this->getAuthorBooks($request);
+                $category = $this->getCategory($request);
+                $student = $this->getStudent($request);
+                return view('Admin.dashboard', compact('returnedBooks', 'issuedBooks', 'allBooks', 'authorBooks', 'category', 'student'));
             } else {
                 return '<script>alert("Tài khoản đã bị khóa");</script>';
             }
@@ -44,60 +45,52 @@ class LoginController extends Controller
     public function getIssuedBooksUser(Request $request)
     {
         $sid = $request->session()->get('stdid');
-        $data = DB::select("SELECT id from tblissuedbookdetails where StudentID='" . $sid . "'");
-        $issuedBooks = count($data);
-        return $issuedBooks;
+        $data = DB::table('tblissuedbookdetails')->where('StudentID', '=', $sid)->count();
+        return $data;
     }
 
     public function getReturnedBooksUser(Request $request)
     {
         $sid = $request->session()->get('stdid');
         $rsts = 0;
-        $data = DB::select("SELECT id from tblissuedbookdetails where StudentID='" . $sid . "' and RetrunStatus='" . $rsts . "'");
-        $returnedBooks = count($data);
-        $request->session()->put('returnedbooksuser', $returnedBooks);
+        $data = DB::table('tblissuedbookdetails')->where([['StudentID', '=', $sid], ['RetrunStatus', '=', $rsts]])->count();
+        return $data;
     }
 
-    public function getAllBooks(Request $request)
+    public function getAllBooks()
     {
-        $data = DB::select("SELECT id from tblbooks ");
-        $listedBooks = count($data);
-        $request->session()->put('listedbooks', $listedBooks);
+        $data = DB::table('tblbooks')->count();
+        return $data;
     }
 
-    public function getIssuedBooks(Request $request)
+    public function getIssuedBooks()
     {
-        $data = DB::select("SELECT id from tblissuedbookdetails ");
-        $listedBooks = count($data);
-        $request->session()->put('issuedbooks', $listedBooks);
+        $data = DB::table('tblissuedbookdetails')->count();
+        return $data;
     }
 
-    public function getReturnedBooks(Request $request)
+    public function getReturnedBooks()
     {
         $rsts = 1;
-        $data = DB::select("SELECT id from tblissuedbookdetails where RetrunStatus='" . $rsts . "'");
-        $returnedBooks = count($data);
-        $request->session()->put('returnedbooks', $returnedBooks);
+        $data = DB::table('tblissuedbookdetails')->where('RetrunStatus','=',$rsts)->count();
+        return $data;
     }
 
-    public function getStudent(Request $request)
+    public function getStudent()
     {
-        $data = DB::select("SELECT id from tblstudents");
-        $studentCount = count($data);
-        $request->session()->put('regstds', $studentCount);
+        $data = DB::table('tblstudents')->count();
+        return $data;
     }
 
-    public function getAuthorBooks(Request $request)
+    public function getAuthorBooks()
     {
-        $data = DB::select("SELECT id from tblauthors");
-        $authorCount = count($data);
-        $request->session()->put('listdathrs', $authorCount);
+        $data = DB::table('tblauthors')->count();
+        return $data;
     }
 
-    public function getCategory(Request $request)
+    public function getCategory()
     {
-        $data = DB::select("SELECT id from tblcategory");
-        $categoryCount = count($data);
-        $request->session()->put('listdcats', $categoryCount);
+        $data = DB::table('tblcategory')->count();
+        return $data;
     }
 }

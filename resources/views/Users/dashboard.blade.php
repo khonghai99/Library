@@ -39,14 +39,14 @@
             <div class="col-md-12">
                 <div class="navbar-collapse collapse ">
                     <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><a href="{{action('LoginController@login')}}" class="menu-top-active">DASHBOARD</a></li>
+                        <li><a href="{{ route('dashboard') }}" class="menu-top-active">DASHBOARD</a></li>
                         <li>
                             <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Account <i
                                     class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="/myprofile">My
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('profile') }}">My
                                         Profile</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="change-password.php">Change
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ route('change-password') }}">Change
                                         Password</a></li>
                             </ul>
                         </li>
@@ -68,7 +68,7 @@
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="alert alert-info back-widget-set text-center">
                     <i class="fa fa-bars fa-5x"></i>
-                    <h3>{{ $issue }} </h3>
+                    <h3>{{ $issueBooksUser }} </h3>
                     Book Issued
                 </div>
             </div>
@@ -76,7 +76,7 @@
             <div class="col-md-3 col-sm-3 col-xs-6">
                 <div class="alert alert-warning back-widget-set text-center">
                     <i class="fa fa-recycle fa-5x"></i>
-                    <h3>{{ session('returnedbooksuser') }} </h3>
+                    <h3>{{ $returnedBooksUser }} </h3>
                     Books Not Returned Yet
                 </div>
             </div>
@@ -87,9 +87,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                &copy; 2020 Library Management System |<a href="" target="_blank"> Designed by : GroupH2</a>
+                &copy; 2020 Library Management System |<i target="_blank"> Designed by : GroupH2</i>
             </div>
-
         </div>
     </div>
 </section>

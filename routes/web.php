@@ -19,8 +19,12 @@ Auth::routes();
 
 Route::post('/dashboard','LoginController@login');
 
-Route::get('/myprofile', 'UserController@myProfile');
-
 Route::get('/login', 'LoginController@index');
+
+Route::get('/myprofile', 'UserController@myProfile')->name('profile');
+
+Route::get('/dashboard','UserController@dashBoard')->name('dashboard');
+
+Route::get('/change_password','UserController@changePassword')->name('change-password');
 
 Route::get('/home', 'HomeController@index')->name('home');
